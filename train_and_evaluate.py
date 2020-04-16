@@ -32,9 +32,12 @@ class MyModel(tf.keras.Model):
 
 
 def main():
-    params = Munch(model_dir='experiments/model_test')
-    for dir in os.listdir(params.model_dir):
-        shutil.rmtree(os.path.join(params.model_dir, dir))
+    params = Munch(model_dir='experiments/')
+
+    # Make an empty dir, clear contents for testing
+    os.makedirs(params.model_dir, exist_ok=True)
+    for directory in os.listdir(params.model_dir):
+        shutil.rmtree(os.path.join(params.model_dir, directory))
 
     params.summary_writer_train = tf.summary.create_file_writer(f"{params.model_dir}/train")
     params.summary_writer_eval = tf.summary.create_file_writer(f"{params.model_dir}/eval")
