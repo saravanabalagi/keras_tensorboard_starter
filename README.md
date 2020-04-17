@@ -26,3 +26,7 @@ and use it in `call` method to log can be a workaround.
 Although it's not as elegant as the above method, it works!
 
 ![Screenshot Old](images/screenshot_old.png)
+
+## Licence
+
+Please see attached [Licence](LICENCE)
